@@ -19,7 +19,6 @@
                     return response.json();
                 }).then(function (furniture) {
                     //set furniture details
-                    console.log(furniture);
                     document.getElementById("imgFurniture").setAttribute('src', furniture.imageURL);
                 
                     if(memberEmail != null && memberEmail != '') {
