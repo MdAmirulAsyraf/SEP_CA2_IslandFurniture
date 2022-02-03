@@ -19,6 +19,7 @@
                     return response.json();
                 }).then(function (furniture) {
                     //set furniture details
+                    console.log(furniture);
                     document.getElementById("imgFurniture").setAttribute('src', furniture.imageURL);
                 
                     if(memberEmail != null && memberEmail != '') {
@@ -28,6 +29,8 @@
                     }
                
                     document.getElementById("categoryLink").innerHTML = furniture.category;
+                    document.getElementById("description").innerHTML = furniture.description;
+                    document.getElementById("furnitureInfo").innerHTML = "Height: " + furniture.height + "<br>Length: " + furniture.length + "<br>Width: " + furniture.width;
                     document.getElementById("categoryLink").setAttribute('href', '/B/' + countryPrefix
                         + '/furnitureCategory.html?cat=' + encodeURIComponent(furniture.category));
 
